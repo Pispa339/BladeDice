@@ -9,7 +9,7 @@
         <!--First-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="BDGameViewController" customModule="BladeDice" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="9pv-A4-QxB" customClass="BDGameViewController" customModule="BladeDice" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -18,35 +18,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QmO-ye-hEP">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                <items>
-                                    <navigationItem title="BladeDice" id="9y3-hi-Bdn"/>
-                                </items>
-                            </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="msJ-UX-UKH">
-                                <rect key="frame" x="0.0" y="44" width="600" height="255"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="245"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Side" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLv-R2-Bx1">
-                                        <rect key="frame" x="46" y="117" width="508" height="21"/>
+                                        <rect key="frame" x="46" y="112" width="508" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qy0-z9-nqt">
-                                        <rect key="frame" x="46" y="67" width="508" height="21"/>
+                                        <rect key="frame" x="46" y="62" width="508" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trickname" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8rb-Hb-XsR">
-                                        <rect key="frame" x="46" y="167" width="508" height="21"/>
+                                        <rect key="frame" x="46" y="162" width="508" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="8rb-Hb-XsR" firstAttribute="top" secondItem="aLv-R2-Bx1" secondAttribute="bottom" constant="29" id="4Jc-Sb-W1l"/>
                                     <constraint firstItem="aLv-R2-Bx1" firstAttribute="centerY" secondItem="msJ-UX-UKH" secondAttribute="centerY" id="5P1-aY-wIw"/>
@@ -61,7 +55,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="88g-Gr-eTC">
-                                <rect key="frame" x="0.0" y="297" width="600" height="254"/>
+                                <rect key="frame" x="0.0" y="307" width="600" height="244"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlayerCell" id="fC9-wn-Krf" customClass="BDPlayerCell" customModule="BladeDice" customModuleProvider="target">
@@ -85,26 +79,25 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="msJ-UX-UKH" firstAttribute="top" secondItem="QmO-ye-hEP" secondAttribute="bottom" id="CXY-yR-4oB"/>
+                            <constraint firstItem="msJ-UX-UKH" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="IID-Cv-Xya"/>
                             <constraint firstAttribute="trailingMargin" secondItem="msJ-UX-UKH" secondAttribute="trailing" constant="-20" id="K2N-GU-DDX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="88g-Gr-eTC" secondAttribute="trailing" constant="-20" id="L7j-DA-U6f"/>
-                            <constraint firstItem="QmO-ye-hEP" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="-20" id="NPP-Vn-rPS"/>
                             <constraint firstItem="88g-Gr-eTC" firstAttribute="width" secondItem="msJ-UX-UKH" secondAttribute="width" id="Pnp-TF-gd0"/>
                             <constraint firstItem="88g-Gr-eTC" firstAttribute="height" secondItem="msJ-UX-UKH" secondAttribute="height" id="Rru-Ve-nLZ"/>
                             <constraint firstItem="88g-Gr-eTC" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-20" id="VGe-RN-Toy"/>
                             <constraint firstItem="88g-Gr-eTC" firstAttribute="top" secondItem="msJ-UX-UKH" secondAttribute="bottom" constant="-2" id="Vev-f3-Ty2"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="QmO-ye-hEP" secondAttribute="trailing" constant="-20" id="Z1P-iH-4Ke"/>
-                            <constraint firstItem="QmO-ye-hEP" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-20" id="jPO-HG-Qv7"/>
                             <constraint firstItem="msJ-UX-UKH" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-20" id="lB7-aC-hYu"/>
                             <constraint firstItem="88g-Gr-eTC" firstAttribute="bottom" secondItem="4ug-Mw-9AY" secondAttribute="top" id="zZX-ks-uKt"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="playerTableView" destination="88g-Gr-eTC" id="eWJ-BQ-aOq"/>
                         <outlet property="sideLabel" destination="aLv-R2-Bx1" id="3Uq-4N-tsy"/>
                         <outlet property="spinLabel" destination="qy0-z9-nqt" id="MLo-IG-Haq"/>
                         <outlet property="trickLabel" destination="8rb-Hb-XsR" id="moI-3s-79V"/>
+                        <outlet property="trickView" destination="msJ-UX-UKH" id="3Zx-Js-Jh5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
