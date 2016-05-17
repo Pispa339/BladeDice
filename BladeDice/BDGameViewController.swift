@@ -19,6 +19,7 @@ class BDGameViewController: UIViewController, UITableViewDataSource, UITableView
     
     var players = [Player]()
     let PCIdentifier = "PlayerCell"
+    let timeoutKey = "TimeoutKey"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,19 +37,19 @@ class BDGameViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func initGestureRecognizers() {
-        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(generateRandomTrick))
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(animateTrickGeneration))
         swipeRight.direction = UISwipeGestureRecognizerDirection.Right
         self.trickView.addGestureRecognizer(swipeRight)
         
-        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(generateRandomTrick))
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(animateTrickGeneration))
         swipeLeft.direction = UISwipeGestureRecognizerDirection.Left
         self.trickView.addGestureRecognizer(swipeLeft)
         
-        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(generateRandomTrick))
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(animateTrickGeneration))
         swipeUp.direction = UISwipeGestureRecognizerDirection.Up
         self.trickView.addGestureRecognizer(swipeUp)
         
-        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(generateRandomTrick))
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(animateTrickGeneration))
         swipeDown.direction = UISwipeGestureRecognizerDirection.Down
         self.trickView.addGestureRecognizer(swipeDown)
     }
@@ -62,7 +63,20 @@ class BDGameViewController: UIViewController, UITableViewDataSource, UITableView
         playerTableView.registerNib(playerCellNib, forCellReuseIdentifier: PCIdentifier)
     }
     
-    func generateRandomTrick() {
+    func animateTrickGeneration() {
+        let timeout = NSDate().dateByAddingTimeInterval(1.0)
+        _ = NSTimer.scheduledTimerWithTimeInterval(0.05, target: self, selector: #selector(generateRandomTrick), userInfo: [timeoutKey:timeout], repeats: true)
+    }
+    
+    func generateRandomTrick(timer: NSTimer) {
+        
+        let userInfo = timer.userInfo as! Dictionary<String, NSDate>
+        let timeout = userInfo[timeoutKey]
+        
+        if(timeout!.compare(NSDate()) == .OrderedAscending) {
+            timer.invalidate()
+        }
+        
         let trickDict = TrickGenerator.generateRandomTrick()
         
         spinLabel.text = trickDict[Constants.spinKey]
